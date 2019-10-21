@@ -11,7 +11,7 @@ using TestStack.BDDfy;
 using TestStack.BDDfy.Scanners.StepScanners.Fluent;
 using Xunit;
 
-namespace PowerBi.Tests
+namespace DotNetCore.PowerBi.Tests
 {
     public class JSONConveterEmbeddedTest
     {
