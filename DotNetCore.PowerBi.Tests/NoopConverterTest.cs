@@ -1,14 +1,12 @@
 ﻿using System.IO;
 using System.IO.Abstractions.TestingHelpers;
-using PowerBi.Converters;
 using Shouldly;
 using TestStack.BDDfy;
-using TestStack.BDDfy.Scanners.StepScanners.Fluent;
 using Xunit;
 
 namespace DotNetCore.PowerBi.Tests
 {
-    
+
     public class NoopConverterTest
     {
         private NoopConverter _converter;

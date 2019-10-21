@@ -4,7 +4,7 @@ using System.IO;
 using System.IO.Abstractions;
 using System.Text;
 
-namespace DotNetCore.PowerBi.Converters.Converters
+namespace DotNetCore.PowerBi.Converters
 {
     public class SectionEntry
     {
