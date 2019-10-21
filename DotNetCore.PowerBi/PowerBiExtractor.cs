@@ -37,7 +37,6 @@ namespace DotNetCore.PowerBi.Converters
 
         public Converter FindConverter(string path)
         {
-
             Regex.Escape(path).Replace(@"\*", ".*").Replace(@"\?", ".");
             foreach (var converter in _converters)
             {
@@ -86,7 +85,7 @@ namespace DotNetCore.PowerBi.Converters
 
                         if (_fileSystem.File.Exists(vcsPath) || _fileSystem.Directory.Exists(vcsPath))
                         {
-                            var zipEntry = zipFile.CreateEntry(zipPath, CompressionLevel.Fastest);
+                            var zipEntry = zipFile.CreateEntry(zipPath, CompressionLevel.Optimal);
                             using (var zipEntryStream = zipEntry.Open())
                             {
                                 converter.WriteVcsToRaw(Path.Combine(extractedPath, name.Replace('/', '\\')), zipEntryStream);
@@ -128,11 +127,6 @@ namespace DotNetCore.PowerBi.Converters
 
         public void ExtractPbit(string path, string outdir, bool overwrite)
         {
-            //if (string.Compare(Path.GetExtension(path), ".pbit", StringComparison.OrdinalIgnoreCase) != 0)
-            //{
-            //    throw new ArgumentException("File must be of type *.pbit", nameof(path));
-            //}
-
             EnsureDestinationFolderExists(outdir, overwrite);
 
             var order = new List<string>();
@@ -167,11 +161,6 @@ namespace DotNetCore.PowerBi.Converters
                 if (overwrite)
                 {
                     Directory.Delete(outdir, true);
-                    //var existingFiles = Directory.EnumerateFiles(outdir);
-                    //foreach (var file in existingFiles)
-                    //{
-                    //    _fileSystem.DeleteFile(file);
-                    //}
                 }
                 else
                 {
