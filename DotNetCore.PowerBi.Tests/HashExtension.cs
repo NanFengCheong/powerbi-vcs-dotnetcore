@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace PowerBi.Tests
+namespace DotNetCore.PowerBi.Tests
 {
     public static class HashExtension
     {

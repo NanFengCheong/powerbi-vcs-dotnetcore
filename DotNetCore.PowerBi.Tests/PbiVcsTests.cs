@@ -9,7 +9,7 @@ using PowerBi.Converters;
 using Shouldly;
 using Xunit;
 
-namespace PowerBi.Tests
+namespace DotNetCore.PowerBi.Tests
 {
     //public class StubFileSystem : IFileSystem
     //{
