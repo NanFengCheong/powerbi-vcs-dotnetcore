@@ -13,6 +13,7 @@ namespace DotNetCore.PowerBiVcs
             var extractor = new PowerBiExtractor(fileSystem);
             extractor.ExtractPbit("Files\\Template.pbit", "TemplateVcs", true);
             extractor.CompressPbit("TemplateVcs", "Files\\Template2.pbit", true);
+            //extractor.ExtractPbit("Files\\Template2.pbit", "Template2Vcs", true);
 
             var options = new CommandLineOptions();
             var result = Parser.Default.ParseArguments<CommandLineOptions>(args)
@@ -43,10 +44,6 @@ namespace DotNetCore.PowerBiVcs
             if (options.WriteToScreen)
             {
                 extractor.WritePbitToScreen(options.Input);
-                //if (Debugger.IsAttached)
-                //{
-                //    Console.ReadLine();
-                //}
             }
         }
     }

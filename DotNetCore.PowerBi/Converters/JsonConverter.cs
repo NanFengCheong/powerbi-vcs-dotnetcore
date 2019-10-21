@@ -145,8 +145,8 @@ namespace DotNetCore.PowerBi.Converters
             {
                 var serialiser = new JsonSerializer
                 {
-                    DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind,
-                    DateParseHandling = DateParseHandling.DateTimeOffset,
+                    DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+                    DateParseHandling = DateParseHandling.None,
                     Formatting = Formatting.Indented,
                 };
 

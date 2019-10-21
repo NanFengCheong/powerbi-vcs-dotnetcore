@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.IO.Abstractions;
 using System.IO.Abstractions.TestingHelpers;
+using System.IO.Compression;
 using System.Reflection;
 using DotNetCore.PowerBi.Converters;
 using Shouldly;
@@ -40,13 +43,32 @@ namespace DotNetCore.PowerBi.Tests
         {
             var originalFile = _fileSystem.FileInfo.FromFileName("Template.pbit");
             var newFile = _fileSystem.FileInfo.FromFileName("Template2.pbit");
-            newFile.Length.ShouldBe(originalFile.Length);
+            //GetPbitLength(newFile).ShouldBe(GetPbitLength(originalFile));
+            //Math.Abs((newFile.Length - originalFile.Length) / originalFile.Length * 100).ShouldBeLessThan(1);
 
             var originalFileHash = string.Empty;
+
+            //using (var stream = originalFile.Open(FileMode.Open))
+            //{
+            //    originalFileHash = stream.HashFile();
+            //}
             using (var stream = originalFile.Open(FileMode.Open))
             {
-                originalFileHash = stream.HashFile();
+                using (FileStream fs = File.Create(Environment.CurrentDirectory+ "\\Template.zip"))
+                {
+                    stream.CopyTo(fs);
+                }
             }
+
+            using (var stream = newFile.Open(FileMode.Open))
+            {
+                using (FileStream fs = File.Create(Environment.CurrentDirectory + "\\Template2.zip"))
+                {
+                    stream.CopyTo(fs);
+                }
+            }
+
+            originalFileHash = GetPbitHash(originalFile);
 
             var newFileHash = string.Empty;
             using (var stream = newFile.Open(FileMode.Open))
@@ -64,10 +86,7 @@ namespace DotNetCore.PowerBi.Tests
 
         private void TheFileIsCreated(string filename)
         {
-             _fileSystem.AllFiles.ShouldContain(Path.GetTempPath() + filename);
-
-            //var attributes = _fileSystem.FileInfo.FromFileName(@"C:\Test\" + filename);
-            //attributes.Length
+            _fileSystem.AllFiles.ShouldContain(Path.GetTempPath() + filename);
         }
 
         private void TheExtractProcessIsRun(string input, string output)
@@ -89,6 +108,44 @@ namespace DotNetCore.PowerBi.Tests
         {
             _fileSystem = new MockFileSystem(new Dictionary<string, MockFileData>(), Path.GetTempPath());
             _extractor = new PowerBiExtractor(_fileSystem);
+        }
+
+        private long GetPbitLength(IFileInfo fileInfo)
+        {
+            using (var stream = fileInfo.Open(FileMode.Open))
+            {
+                using (var zip = new ZipArchive(stream))
+                {
+                    string tempZipPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+                    string outputZipPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".zip");
+                    zip.ExtractToDirectory(tempZipPath);
+                    ZipFile.CreateFromDirectory(tempZipPath, outputZipPath, CompressionLevel.Optimal, false);
+                    var outputFileInfo = new FileInfo(outputZipPath);
+                    using (Stream file = File.Open(outputZipPath, FileMode.Open))
+                    {
+                        return file.Length;
+                    }
+                }
+            }
+        }
+
+        private string GetPbitHash(IFileInfo fileInfo)
+        {
+            using (var stream = fileInfo.Open(FileMode.Open))
+            {
+                using (var zip = new ZipArchive(stream))
+                {
+                    string tempZipPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+                    string outputZipPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".zip");
+                    zip.ExtractToDirectory(tempZipPath);
+                    ZipFile.CreateFromDirectory(tempZipPath, outputZipPath, CompressionLevel.Optimal, false);
+                    var outputFileInfo = new FileInfo(outputZipPath);
+                    using (Stream file = File.Open(outputZipPath, FileMode.Open))
+                    {
+                        return file.HashFile();
+                    }
+                }
+            }
         }
     }
 }
