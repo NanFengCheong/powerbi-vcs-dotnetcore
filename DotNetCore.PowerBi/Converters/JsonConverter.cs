@@ -99,7 +99,7 @@ namespace DotNetCore.PowerBi.Converters
             }
         }
 
-        private void UndoJsonifyEmbeddedJson(JToken token)
+        private void UndoJsonifyEmbeddedJson(JToken token, Formatting formatting = Formatting.Indented)
         {
        if (token is JObject)
             {
@@ -112,7 +112,7 @@ namespace DotNetCore.PowerBi.Converters
                         {
                             DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind,
                             DateParseHandling = DateParseHandling.DateTimeOffset,
-                            Formatting = Formatting.Indented
+                            Formatting = formatting
                         };
 
                         var serialised = JsonConvert.SerializeObject(property.First, settings);
@@ -121,7 +121,7 @@ namespace DotNetCore.PowerBi.Converters
                     }
                     else
                     {
-                        UndoJsonifyEmbeddedJson(property.Value);
+                        UndoJsonifyEmbeddedJson(property.Value, formatting);
                     }
                 }
             }
@@ -132,7 +132,7 @@ namespace DotNetCore.PowerBi.Converters
                 {
                     foreach (var childToken in token.Children().ToList())
                     {
-                        UndoJsonifyEmbeddedJson(childToken);
+                        UndoJsonifyEmbeddedJson(childToken, formatting);
                     }
                 }
             }
@@ -211,7 +211,7 @@ namespace DotNetCore.PowerBi.Converters
 
                 var obj = serialiser.Deserialize(reader);
 
-                UndoJsonifyEmbeddedJson(obj as JToken);
+                UndoJsonifyEmbeddedJson(obj as JToken, serialiser.Formatting);
 
                 var memoryStream = new MemoryStream();
                 using (var streamWriter = new StreamWriter(memoryStream, _encoding, 1024, true))
