@@ -64,7 +64,7 @@ namespace DotNetCore.PowerBi.Tests
 
         private void TheFileIsCreated(string filename)
         {
-             _fileSystem.AllFiles.ShouldContain(@"C:\Test\" + filename);
+             _fileSystem.AllFiles.ShouldContain(Path.GetTempPath() + filename);
 
             //var attributes = _fileSystem.FileInfo.FromFileName(@"C:\Test\" + filename);
             //attributes.Length
@@ -82,12 +82,12 @@ namespace DotNetCore.PowerBi.Tests
 
         private void AFileThatExists(string templatePbit)
         {
-            _fileSystem.AddFileFromEmbeddedResource("Template.pbit", Assembly.GetExecutingAssembly(), "PowerBi.Tests.Files.Template.pbit");
+            _fileSystem.AddFileFromEmbeddedResource("Template.pbit", Assembly.GetExecutingAssembly(), "DotNetCore.PowerBi.Tests.Files.Template.pbit");
         }
 
         private void ANewPowerBiExtractor()
         {
-            _fileSystem = new MockFileSystem(new Dictionary<string, MockFileData>(), @"C:\Test\");
+            _fileSystem = new MockFileSystem(new Dictionary<string, MockFileData>(), Path.GetTempPath());
             _extractor = new PowerBiExtractor(_fileSystem);
         }
     }
