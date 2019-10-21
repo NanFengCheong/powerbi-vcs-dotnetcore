@@ -1,5 +1,6 @@
 using System;
 using System.IO.Abstractions.TestingHelpers;
+using DotNetCore.PowerBi.Converters;
 using Shouldly;
 using Xunit;
 

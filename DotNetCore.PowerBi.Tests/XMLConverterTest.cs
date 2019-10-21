@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.IO.Abstractions.TestingHelpers;
 using System.Text;
+using DotNetCore.PowerBi.Converters;
 using Shouldly;
 using TestStack.BDDfy;
 using Xunit;

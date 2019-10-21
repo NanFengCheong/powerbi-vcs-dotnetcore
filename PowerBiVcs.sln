@@ -3,17 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBiVcs", "PowerBiVcs\PowerBiVcs.csproj", "{FD52C09E-F514-4BEA-AAE6-7B690005A26C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBi", "PowerBi\PowerBi.csproj", "{72E117BE-4314-488E-B067-45A52CF821F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBi.Tests", "PowerBi.Tests\PowerBi.Tests.csproj", "{0F661AEA-27D7-408C-B8C1-D6793F0B9FBD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore.PowerBi", "DotNetCore.PowerBi\DotNetCore.PowerBi.csproj", "{C23489B5-AE99-4161-A8DD-86E7EB8FDFBC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore.PowerBi.Tests", "DotNetCore.PowerBi.Tests\DotNetCore.PowerBi.Tests.csproj", "{43085A4A-7A98-40C9-93AD-0D8C54753D44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore.PowerBiVcs", "DotNetCore.PowerBiVcs\DotNetCore.PowerBiVcs.csproj", "{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore.PowerBiVcs", "DotNetCore.PowerBiVcs\DotNetCore.PowerBiVcs.csproj", "{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD52C09E-F514-4BEA-AAE6-7B690005A26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD52C09E-F514-4BEA-AAE6-7B690005A26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD52C09E-F514-4BEA-AAE6-7B690005A26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD52C09E-F514-4BEA-AAE6-7B690005A26C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72E117BE-4314-488E-B067-45A52CF821F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72E117BE-4314-488E-B067-45A52CF821F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72E117BE-4314-488E-B067-45A52CF821F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72E117BE-4314-488E-B067-45A52CF821F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F661AEA-27D7-408C-B8C1-D6793F0B9FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F661AEA-27D7-408C-B8C1-D6793F0B9FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F661AEA-27D7-408C-B8C1-D6793F0B9FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F661AEA-27D7-408C-B8C1-D6793F0B9FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C23489B5-AE99-4161-A8DD-86E7EB8FDFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C23489B5-AE99-4161-A8DD-86E7EB8FDFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C23489B5-AE99-4161-A8DD-86E7EB8FDFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
