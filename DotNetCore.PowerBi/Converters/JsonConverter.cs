@@ -6,7 +6,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace DotNetCore.PowerBi.Converters.Converters
+namespace DotNetCore.PowerBi.Converters
 {
     public class JsonConverter : Converter
     {

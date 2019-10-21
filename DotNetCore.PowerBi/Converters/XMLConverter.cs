@@ -3,7 +3,7 @@ using System.IO.Abstractions;
 using System.Text;
 using System.Xml;
 
-namespace DotNetCore.PowerBi.Converters.Converters
+namespace DotNetCore.PowerBi.Converters
 {
     public class XMLConverter : Converter
     {

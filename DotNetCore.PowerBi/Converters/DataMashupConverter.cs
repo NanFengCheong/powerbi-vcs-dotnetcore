@@ -1,4 +1,4 @@
-﻿using DotNetCore.PowerBi.Converters.Converters;
+﻿using DotNetCore.PowerBi.Converters;
 using System;
 using System.Collections.Generic;
 using System.IO;

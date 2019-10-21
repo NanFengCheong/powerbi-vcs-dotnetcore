@@ -3,7 +3,7 @@ using System.IO.Abstractions;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DotNetCore.PowerBi.Converters.Converters
+namespace DotNetCore.PowerBi.Converters
 {
     public class NoopConverter : Converter
     {

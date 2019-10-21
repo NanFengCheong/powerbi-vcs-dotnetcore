@@ -1,10 +1,9 @@
 ﻿using System.IO;
 using System.IO.Abstractions.TestingHelpers;
 using System.Text;
-using PowerBi.Converters;
+using DotNetCore.PowerBi.Converters;
 using Shouldly;
 using TestStack.BDDfy;
-using TestStack.BDDfy.Scanners.StepScanners.Fluent;
 using Xunit;
 
 namespace DotNetCore.PowerBi.Tests

@@ -1,11 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.IO.Abstractions.TestingHelpers;
-using System.IO.Compression;
-using System.Linq;
-using System.Reflection;
-using PowerBi.Converters;
 using Shouldly;
 using Xunit;
 

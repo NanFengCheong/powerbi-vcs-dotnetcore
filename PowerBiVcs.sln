@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBi", "PowerBi\PowerBi.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBi.Tests", "PowerBi.Tests\PowerBi.Tests.csproj", "{0F661AEA-27D7-408C-B8C1-D6793F0B9FBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore.PowerBi", "DotNetCore.PowerBi\DotNetCore.PowerBi.csproj", "{C23489B5-AE99-4161-A8DD-86E7EB8FDFBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore.PowerBi", "DotNetCore.PowerBi\DotNetCore.PowerBi.csproj", "{C23489B5-AE99-4161-A8DD-86E7EB8FDFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore.PowerBi.Tests", "DotNetCore.PowerBi.Tests\DotNetCore.PowerBi.Tests.csproj", "{43085A4A-7A98-40C9-93AD-0D8C54753D44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore.PowerBi.Tests", "DotNetCore.PowerBi.Tests\DotNetCore.PowerBi.Tests.csproj", "{43085A4A-7A98-40C9-93AD-0D8C54753D44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore.PowerBiVcs", "DotNetCore.PowerBiVcs\DotNetCore.PowerBiVcs.csproj", "{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{43085A4A-7A98-40C9-93AD-0D8C54753D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43085A4A-7A98-40C9-93AD-0D8C54753D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43085A4A-7A98-40C9-93AD-0D8C54753D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF45E5F6-8A4F-43C9-BF14-D46726A4E909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

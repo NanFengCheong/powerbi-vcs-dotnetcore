@@ -5,7 +5,6 @@ using System.Reflection;
 using DotNetCore.PowerBi.Converters;
 using Shouldly;
 using TestStack.BDDfy;
-using TestStack.BDDfy.Scanners.StepScanners.Fluent;
 using Xunit;
 
 namespace DotNetCore.PowerBi.Tests
